@@ -8,57 +8,17 @@
             <em class="fa fa-fw fa-bar-chart-o"></em>&nbsp;
             <span>{{ 'Recharge' | translate }}</span>
         </a>
-        <a [routerLink]="['/tables']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/encaissements']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <em class="fa fa-fw fa-table"></em>&nbsp;
-            <span>{{ 'Tables' | translate }}</span>
+            <span>{{ 'Encaissement' | translate }}</span>
         </a>
-        <a [routerLink]="['/forms']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/operations']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <em class="fa fa-fw fa-edit"></em>&nbsp;
-            <span>{{ 'Forms' | translate }}</span>
+            <span>{{ 'Opérations' | translate }}</span>
         </a>
-        <a [routerLink]="['/bs-element']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+        <a [routerLink]="['/parametres']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <em class="fa fa-fw fa-desktop"></em>&nbsp;
-            <span>{{ 'Bootstrap Element' | translate }}</span>
-        </a>
-        <a [routerLink]="['/grid']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-fw fa-wrench"></em>&nbsp;
-            <span>{{ 'Bootstrap Grid' | translate }}</span>
-        </a>
-        <a [routerLink]="['/components']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-th-list"></em>&nbsp;
-            <span>{{ 'Component' | translate }}</span>
-        </a>
-        <div class="nested-menu">
-            <a class="list-group-item" (click)="addExpandClass('pages')">
-                <em class="fa fa-plus"></em>&nbsp;
-                <span>{{ 'Menu' | translate }}</span>
-            </a>
-            <li class="nested" [class.expand]="showMenu === 'pages'">
-                <ul class="submenu">
-                    <li>
-                        <a href="javascript:void(0)">
-                            <em class="fa fa-monument"></em>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <em class="fa fa-monument"></em>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <em class="fa fa-monument"></em>&nbsp;
-                            <span>{{ 'Submenu' | translate }}</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        </div>
-        <a [routerLink]="['/blank-page']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-file-o"></em>&nbsp;
-            <span>{{ 'Blank Page' | translate }}</span>
+            <span>{{ 'Paramètres' | translate }}</span>
         </a>
 
         <div class="header-fields">

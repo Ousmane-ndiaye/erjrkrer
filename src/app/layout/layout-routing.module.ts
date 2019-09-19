@@ -10,12 +10,12 @@ const routes: Routes = [
 			{ path: '', redirectTo: 'dashboard', pathMatch: 'prefix' },
 			{ path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule) },
 			{ path: 'recharges', loadChildren: () => import('./recharges/recharges.module').then((m) => m.RechargesModule) },
-			{ path: 'tables', loadChildren: () => import('./tables/tables.module').then((m) => m.TablesModule) },
-			{ path: 'forms', loadChildren: () => import('./form/form.module').then((m) => m.FormModule) },
-			{ path: 'bs-element', loadChildren: () => import('./bs-element/bs-element.module').then((m) => m.BsElementModule) },
-			{ path: 'grid', loadChildren: () => import('./grid/grid.module').then((m) => m.GridModule) },
-			{ path: 'components', loadChildren: () => import('./bs-component/bs-component.module').then((m) => m.BsComponentModule) },
-			{ path: 'blank-page', loadChildren: () => import('./blank-page/blank-page.module').then((m) => m.BlankPageModule) }
+			{
+				path: 'encaissements',
+				loadChildren: () => import('./encaissements/encaissements.module').then((m) => m.EncaissementsModule)
+			},
+			{ path: 'operations', loadChildren: () => import('./operations/operations.module').then((m) => m.OperationsModule) },
+			{ path: 'parametres', loadChildren: () => import('./parametres/parametres.module').then((m) => m.ParametresModule) }
 		]
 	}
 ];
