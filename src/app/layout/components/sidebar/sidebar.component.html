@@ -5,19 +5,27 @@
             <span>{{ 'Dashboard' | translate }}</span>
         </a>
         <a [routerLink]="['/recharges']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-fw fa-bar-chart-o"></em>&nbsp;
-            <span>{{ 'Recharge' | translate }}</span>
+            <em class="fa fa-fw fa-refresh"></em>&nbsp;
+            <span>{{ 'Rechargement' | translate }}</span>
         </a>
         <a [routerLink]="['/encaissements']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-fw fa-table"></em>&nbsp;
+            <em class=" fa fa-fw fa-money"></em>&nbsp;
             <span>{{ 'Encaissement' | translate }}</span>
         </a>
         <a [routerLink]="['/operations']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-fw fa-edit"></em>&nbsp;
+            <em class="fa fa-fw fa-tasks"></em>&nbsp;
             <span>{{ 'Opérations' | translate }}</span>
         </a>
+        <a [routerLink]="['/cartes']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <em class="fa fa-fw fa-credit-card"></em>&nbsp;
+            <span>{{ 'Gestions cartes' | translate }}</span>
+        </a>
+        <a [routerLink]="['/restaurants']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <em class="fa fa-fw fa-cutlery"></em>&nbsp;
+            <span>{{ 'Restaurants' | translate }}</span>
+        </a>
         <a [routerLink]="['/parametres']" [routerLinkActive]="['router-link-active']" class="list-group-item">
-            <em class="fa fa-fw fa-desktop"></em>&nbsp;
+            <em class="fa fa-fw fa-cogs"></em>&nbsp;
             <span>{{ 'Paramètres' | translate }}</span>
         </a>
 
