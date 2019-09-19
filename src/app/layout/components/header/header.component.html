@@ -9,23 +9,6 @@
             <input class="form-control mr-sm-2" type="text" placeholder="{{ 'Search' | translate }}" >
         </form>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item d-none d-xl-block">
-                <a
-                    href="https://github.com/start-angular/SB-Admin-BS4-Angular-7/archive/master.zip"
-                    class="nav-link btn mt-1" role="button"
-                    style="padding: .375rem 1rem !important;border-color: #999;"
-                >
-                    {{ 'Download Now' | translate }}
-                </a>
-            </li> &nbsp;
-            <li class="nav-item">
-                <a href="javascript:void(0)" class="nav-link mt-1"
-                    style="padding: 0.375rem 1rem !important; border-color: #999;"
-                    (click)="rltAndLtr()"
-                >
-                    RTL/LTR
-                </a>
-            </li> &nbsp;
             <li class="nav-item dropdown" ngbDropdown>
                 <a class="nav-link" href="javascript:void(0)" ngbDropdownToggle>
                     <i class="fa fa-envelope"></i> <b class="caret"></b><span class="sr-only">(current)</span>
@@ -82,37 +65,6 @@
                     <li class="dropdown-divider"></li>
                     <a href="javascript:void(0)" class="dropdown-item">
                         {{ 'View All' | translate }}
-                    </a>
-                </div>
-            </li>
-            <li class="nav-item dropdown" ngbDropdown>
-                <a href="javascript:void(0)" class="nav-link" ngbDropdownToggle>
-                    <i class="fa fa-language"></i> {{ 'Language' | translate }} <b class="caret"></b>
-                </a>
-                <div class="dropdown-menu-right" ngbDropdownMenu>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('en')">
-                        {{ 'English' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('fr')">
-                        {{ 'French' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('ur')">
-                        {{ 'Urdu' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('es')">
-                        {{ 'Spanish' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('it')">
-                        {{ 'Italian' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('fa')">
-                        {{ 'Farsi' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('de')">
-                        {{ 'German' | translate }}
-                    </a>
-                    <a class="dropdown-item" href="javascript:void(0)" (click)="changeLang('zh-CHS')">
-                        {{ 'Simplified Chinese' | translate }}
                     </a>
                 </div>
             </li>
