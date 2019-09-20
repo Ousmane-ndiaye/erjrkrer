@@ -7,9 +7,30 @@
         </button>
     </div>
     <div class="modal-body">
-        <p>One fine body&hellip;</p>
+        <form role="form" id="formAddCarte">
+            <fieldset class="form-group">
+                <label>Nom du restaurant</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Gérant</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>E-mail</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Téléphone</label>
+                <input class="form-control">
+            </fieldset>
+        </form>
     </div>
     <div class="modal-footer">
+        <button type="button" form="formAddCarte" class="btn btn-success">Enregistrer </button>
         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Fermer</button>
     </div>
 </ng-template>
