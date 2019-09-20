@@ -7,40 +7,32 @@
         </button>
     </div>
     <div class="modal-body">
-        <form role="form">
-            <div class="form-group">
-                <label>Bénéficiaire</label>
-                <select class="form-control">
-                    <option>Cadres</option>
-                    <option>Consultants</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Mois</label>
-                <select class="form-control">
-                    <option>Janvier</option>
-                    <option>Février</option>
-                    <option>Mars</option>
-                    <option>Avril</option>
-                    <option>Mais</option>
-                    <option>Juin</option>
-                    <option>Juillet</option>
-                    <option>Août</option>
-                    <option>Septembre</option>
-                    <option>Octobre</option>
-                    <option>Novembre</option>
-                    <option>Décembre</option>
-                </select>
-            </div>
+        <form role="form" id="formAddResto">
+            <fieldset class="form-group">
+                <label>Nom du restaurant</label>
+                <input class="form-control" >
+            </fieldset>
 
             <fieldset class="form-group">
-                <label>Montant</label>
-                <input class="form-control" placeholder="Ex: 100000">
+                <label>Gérant</label>
+                <input class="form-control">
             </fieldset>
+
+            <fieldset class="form-group">
+                <label>E-mail</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Téléphone</label>
+                <input class="form-control">
+            </fieldset>
+
+
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Fermer</button>
+        <button type="button" form="formAddResto" class="btn btn-success" >Enregistrer </button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler </button>
     </div>
 </ng-template>
