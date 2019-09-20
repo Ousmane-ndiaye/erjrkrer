@@ -5,8 +5,10 @@ import { RechargesRoutingModule } from './recharges-routing.module';
 import { RechargesComponent } from './recharges.component';
 import { PageHeaderModule } from 'src/app/shared';
 
+import { StatModule } from '../../shared';
+
 @NgModule({
 	declarations: [ RechargesComponent ],
-	imports: [ CommonModule, RechargesRoutingModule, PageHeaderModule ]
+	imports: [ CommonModule, StatModule, RechargesRoutingModule, PageHeaderModule ]
 })
 export class RechargesModule {}
