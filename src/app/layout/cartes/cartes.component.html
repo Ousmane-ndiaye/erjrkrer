@@ -1,1 +1,24 @@
-<p>cartes works!</p>
+<div [@routerTransition]>
+    <app-page-header [heading]="'Gestions des cartes'" [icon]="'fa-credit-card'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12 mt-2 text-right">
+            <app-add-carte class="mb-5"></app-add-carte>
+        </div>
+        <div class="col col-xl-12 col-lg-12 mt-2">
+            <ngb-tabset>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Listes des cadres</ng-template>
+                    <ng-template ngbTabContent>
+                        <app-table-liste-profil></app-table-liste-profil>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Liste des consultants</ng-template>
+                    <ng-template ngbTabContent>
+                        <app-table-liste-profil></app-table-liste-profil>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>

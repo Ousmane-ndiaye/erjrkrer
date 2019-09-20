@@ -1,1 +1,24 @@
-<p>encaissements works!</p>
+<div [@routerTransition]>
+    <app-page-header [heading]="'Encaissement'" [icon]="'fa-money'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12 mt-2 text-right">
+            <app-form-extract class="mb-5"></app-form-extract>
+        </div>
+        <div class="col col-xl-12 col-lg-12 mt-2">
+            <ngb-tabset>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Restaurant un</ng-template>
+                    <ng-template ngbTabContent>
+                        <app-table-transaction></app-table-transaction>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab>
+                    <ng-template ngbTabTitle>Restaurant deux</ng-template>
+                    <ng-template ngbTabContent>
+                        <app-table-transaction></app-table-transaction>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>

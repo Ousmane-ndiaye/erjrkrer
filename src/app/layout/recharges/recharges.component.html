@@ -1,5 +1,5 @@
 <div [@routerTransition]>
-    <app-page-header [heading]="'Rechargement'" [icon]="'fa-table'"></app-page-header>
+    <app-page-header [heading]="'Rechargement'" [icon]="'fa-refresh'"></app-page-header>
     <div class="row">
         <div class="col col-xl-12 col-lg-12">
             <div class="card mb-3">
@@ -7,12 +7,14 @@
                     Liste des rechargements
                 </div>
                 <div class="card-body table-responsive">
+                    <app-add class="pull-right mb-3"></app-add>
                     <table class="table table-striped">
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>Bénéficière</th>
+                                <th>Bénéficiaire</th>
                                 <th>Mois</th>
+                                <th>Montant</th>
                                 <th>Date</th>
                                 <th>Options</th>
                             </tr>
@@ -22,6 +24,7 @@
                                 <th scope="row">1</th>
                                 <td>Cadres</td>
                                 <td>Septembre</td>
+                                <td>100 000f</td>
                                 <td>29 Novembre 2019</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle" aria-hidden="true"></em></button>
@@ -32,6 +35,7 @@
                                 <th scope="row">2</th>
                                 <td>Cadres</td>
                                 <td>Août</td>
+                                <td>100 000f</td>
                                 <td>30 Juillet 2019</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"aria-hidden="true"></em></button>
@@ -42,6 +46,7 @@
                                 <th scope="row">3</th>
                                 <td>Cadres</td>
                                 <td>Juillet</td>
+                                <td>100 000f</td>
                                 <td>29 Juin 2019</td>
                                 <td>
                                     <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle" aria-hidden="true"></em></button>

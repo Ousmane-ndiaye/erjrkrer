@@ -1,1 +1,16 @@
-<p>restaurants works!</p>
+<div [@routerTransition]>
+    <app-page-header [heading]="'Restaurants'" [icon]="'fa-cutlery'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Liste des restaurants
+                </div>
+                <div class="card-body table-responsive">
+                    <app-add-restaurant class="pull-right mb-3"></app-add-restaurant>
+                    <app-table-restaurants></app-table-restaurants>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
