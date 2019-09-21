@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
+import { AdalService } from 'adal-angular4';
+
 import { AuthenticationService } from '../shared/services/authentication.service';
 
 @Component({
@@ -23,7 +25,8 @@ export class LoginComponent implements OnInit {
 		private formBuilder: FormBuilder,
 		private route: ActivatedRoute,
 		private router: Router,
-		private authenticationService: AuthenticationService
+		private authenticationService: AuthenticationService,
+		private adalService: AdalService
 	) {
 		// redirect to home if already logged in
 		if (this.authenticationService.currentUserValue) {
@@ -64,5 +67,9 @@ export class LoginComponent implements OnInit {
 				this.loading = false;
 			}
 		);
+	}
+
+	login() {
+		this.adalService.login();
 	}
 }

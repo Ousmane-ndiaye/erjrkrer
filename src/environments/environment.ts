@@ -4,7 +4,13 @@
 
 export const environment = {
 	production: false,
-	apiUrl: 'http://dev-azure-soccocim.com'
+	apiUrl: 'https://dev-ne-apiapp-nopale.azurewebsites.net/api',
+	authConfig: {
+		instance: 'https://login.microsoftonline.com/',
+		tenant: 'nopaleb2c.onmicrosoft.com',
+		tenentId: 'nopaleapi',
+		clientId: 'e55dec96-1b7e-4fbd-bea5-593a2ca40677'
+	}
 };
 
 /*
