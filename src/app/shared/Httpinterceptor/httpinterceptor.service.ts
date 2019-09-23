@@ -17,6 +17,7 @@ export class HttpinterceptorService implements HttpInterceptor {
 				Authorization: `Bearer ${this.adalService.userInfo.token}`
 			}
 		});
+		console.log(this.adalService.userInfo.token);
 		return next.handle(tokenizeReq);
 	}
 }

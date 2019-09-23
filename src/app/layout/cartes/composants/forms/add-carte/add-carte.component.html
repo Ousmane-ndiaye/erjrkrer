@@ -7,36 +7,36 @@
         </button>
     </div>
     <div class="modal-body">
-        <form role="form" id="formAddCarte">
+        <form role="form" id="formAddCarte" method="POST" #formAddCarte="ngForm" (ngSubmit)="linkCard(formAddCarte)">
             <fieldset class="form-group">
                 <label>Numero Carte</label>
-                <input placeholder="Ex: 0000 0000 0000 0000" class="form-control">
+                <input type="text" placeholder="Ex: 0000 0000 0000 0000" class="form-control" name="cardNumber" ngModel>
             </fieldset>
             <fieldset class="form-group">
                 <label>Niveau</label>
-                <select class="form-control">
-                    <option>Cadre</option>
-                    <option>Contractuel</option>
+                <select class="form-control" name="profil" ngModel>
+                    <option value="cadre">Cadre</option>
+                    <option value="contractuel">Contractuel</option>
                 </select>
             </fieldset>
             <fieldset class="form-group">
                 <label>Proprietaire</label>
-                <input placeholder="Ex: Youssou NDOUR" class="form-control">
+                <input type="text" placeholder="Ex: Youssou NDOUR" class="form-control" name="userFullName" ngModel>
             </fieldset>
 
             <fieldset class="form-group">
                 <label>E-mail</label>
-                <input class="form-control">
+                <input type="text" class="form-control" name="userEmail" ngModel>
             </fieldset>
 
             <fieldset class="form-group">
                 <label>Téléphone</label>
-                <input class="form-control">
+                <input type="text" class="form-control" name="userPhone" ngModel>
             </fieldset>
         </form>
     </div>
     <div class="modal-footer">
-        <button type="button" form="formAddCarte" class="btn btn-success">Enregistrer </button>
-        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Fermer</button>
+        <button type="submit" form="formAddCarte" class="btn btn-success">Enregistrer </button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler </button>
     </div>
 </ng-template>

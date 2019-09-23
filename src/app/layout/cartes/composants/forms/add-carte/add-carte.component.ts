@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+import { CardService } from 'src/app/data/service/card.service';
+
 @Component({
 	selector: 'app-add-carte',
 	templateUrl: './add-carte.component.html',
@@ -8,7 +10,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddCarteComponent {
 	closeResult: string;
-	constructor(private modalService: NgbModal) {}
+	constructor(private modalService: NgbModal, private cardService: CardService) {}
 
 	open(content) {
 		this.modalService.open(content).result.then(
@@ -29,5 +31,12 @@ export class AddCarteComponent {
 		} else {
 			return `with: ${reason}`;
 		}
+	}
+
+	linkCard(formData) {
+		console.log(formData.value);
+		this.cardService.link(formData.value).subscribe((data: any) => {
+			console.log(data);
+		});
 	}
 }

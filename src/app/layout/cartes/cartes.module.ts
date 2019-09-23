@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { PageHeaderModule, StatModule } from 'src/app/shared';
+import { PageHeaderModule, StatModule, PartageModule } from 'src/app/shared';
 
 import { CartesRoutingModule } from './cartes-routing.module';
 import { CartesComponent } from './cartes.component';
@@ -12,6 +12,6 @@ import { TableListeProfilComponent } from './composants/table-liste-profil/table
 
 @NgModule({
 	declarations: [ CartesComponent, AddCarteComponent, TableListeProfilComponent ],
-	imports: [ CommonModule, CartesRoutingModule, NgbModule, StatModule, PageHeaderModule ]
+	imports: [ CommonModule, CartesRoutingModule, NgbModule, StatModule, PageHeaderModule, PartageModule ]
 })
 export class CartesModule {}
