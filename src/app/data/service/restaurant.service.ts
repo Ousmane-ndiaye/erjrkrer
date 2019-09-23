@@ -10,7 +10,7 @@ import { Restaurant } from './../schema/restaurant';
 export class RestaurantService {
 	constructor(private http: HttpClient) {}
 
-	createRestaurant(resto: Restaurant) {
+	create(resto: Restaurant) {
 		return this.http.post(`${environment.apiUrl}/restaurant/create`, resto, { observe: 'response' });
 	}
 }

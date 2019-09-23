@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 export class CardService {
 	constructor(private http: HttpClient) {}
 
-	linkCard(data) {
+	link(data) {
 		return this.http.post(`${environment.apiUrl}/card/link`, data, { observe: 'response' });
 	}
 }

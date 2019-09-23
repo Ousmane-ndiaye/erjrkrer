@@ -10,7 +10,7 @@ import { User } from './../schema/user';
 export class UserService {
 	constructor(private http: HttpClient) {}
 
-	createUser(user: User) {
+	create(user: User) {
 		return this.http.post(`${environment.apiUrl}/user/create`, user, { observe: 'response' });
 	}
 }
