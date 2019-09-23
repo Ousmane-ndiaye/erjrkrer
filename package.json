@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "4.2.1",
     "@ngx-translate/core": "11.0.1",
     "@ngx-translate/http-loader": "4.0.0",
+    "adal-angular4": "^4.0.12",
     "chart.js": "2.7.3",
     "core-js": "2.5.7",
     "font-awesome": "4.7.0",
