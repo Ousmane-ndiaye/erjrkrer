@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { environment } from 'src/environments/environment';
+import { User } from './../schema/user';
 
 @Injectable({
 	providedIn: 'root'
 })
-export class CardService {
+export class UserService {
 	constructor(private http: HttpClient) {}
 
-	linkCard(data) {
-		return this.http.post(`${environment.apiUrl}/card/link`, data, { observe: 'response' });
+	createUser(user: User) {
+		return this.http.post(`${environment.apiUrl}/user/create`, user, { observe: 'response' });
 	}
 }
