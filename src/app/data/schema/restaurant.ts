@@ -1,4 +1,4 @@
 export interface Restaurant {
-	id?: string;
-	libelle?: string;
+	objectId?: string;
+	name?: string;
 }
