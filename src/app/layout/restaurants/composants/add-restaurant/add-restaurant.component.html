@@ -1,0 +1,36 @@
+<button class="btn btn-primary" (click)="open(content)">Ajouter un restaurant</button>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Nouveau restaurant</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form role="form" id="formAddResto">
+            <fieldset class="form-group">
+                <label>Nom du restaurant</label>
+                <input class="form-control" >
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Gérant</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>E-mail</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Téléphone</label>
+                <input class="form-control">
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" form="formAddResto" class="btn btn-success" >Enregistrer </button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler </button>
+    </div>
+</ng-template>

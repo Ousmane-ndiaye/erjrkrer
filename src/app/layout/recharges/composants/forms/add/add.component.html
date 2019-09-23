@@ -1,0 +1,48 @@
+<button class="btn btn-primary" (click)="open(content)">Faire un rechargement</button>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Nouveau rechargement</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form role="form">
+            <div class="form-group">
+                <label>Bénéficiaire</label>
+                <select class="form-control">
+                    <option>Cadres</option>
+                    <option>Contractuel</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Mois</label>
+                <select class="form-control">
+                    <option>Janvier</option>
+                    <option>Février</option>
+                    <option>Mars</option>
+                    <option>Avril</option>
+                    <option>Mais</option>
+                    <option>Juin</option>
+                    <option>Juillet</option>
+                    <option>Août</option>
+                    <option>Septembre</option>
+                    <option>Octobre</option>
+                    <option>Novembre</option>
+                    <option>Décembre</option>
+                </select>
+            </div>
+
+            <fieldset class="form-group">
+                <label>Montant</label>
+                <input class="form-control" placeholder="Ex: 100000">
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+            <button type="button" class="btn btn-success" (click)="c('Close click')">Recharger</button>
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler</button>    
+            
+    </div>
+</ng-template>

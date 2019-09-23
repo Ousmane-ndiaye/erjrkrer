@@ -1,0 +1,42 @@
+<button class="btn btn-primary" (click)="open(content)">Ajouter une carte</button>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Ajout d'une nouvelle carte</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <form role="form" id="formAddCarte">
+            <fieldset class="form-group">
+                <label>Numero Carte</label>
+                <input placeholder="Ex: 0000 0000 0000 0000" class="form-control">
+            </fieldset>
+            <fieldset class="form-group">
+                <label>Niveau</label>
+                <select class="form-control">
+                    <option>Cadre</option>
+                    <option>Contractuel</option>
+                </select>
+            </fieldset>
+            <fieldset class="form-group">
+                <label>Proprietaire</label>
+                <input placeholder="Ex: Youssou NDOUR" class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>E-mail</label>
+                <input class="form-control">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Téléphone</label>
+                <input class="form-control">
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button type="button" form="formAddCarte" class="btn btn-success">Enregistrer </button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Fermer</button>
+    </div>
+</ng-template>

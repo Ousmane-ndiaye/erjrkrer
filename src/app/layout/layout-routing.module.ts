@@ -15,6 +15,8 @@ const routes: Routes = [
 				loadChildren: () => import('./encaissements/encaissements.module').then((m) => m.EncaissementsModule)
 			},
 			{ path: 'operations', loadChildren: () => import('./operations/operations.module').then((m) => m.OperationsModule) },
+			{ path: 'cartes', loadChildren: () => import('./cartes/cartes.module').then((m) => m.CartesModule) },
+			{ path: 'restaurants', loadChildren: () => import('./restaurants/restaurants.module').then((m) => m.RestaurantsModule) },
 			{ path: 'parametres', loadChildren: () => import('./parametres/parametres.module').then((m) => m.ParametresModule) }
 		]
 	}
