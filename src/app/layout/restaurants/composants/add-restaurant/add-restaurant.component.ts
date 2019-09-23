@@ -1,5 +1,8 @@
+import { Restaurant } from 'src/app/data/schema/restaurant';
 import { Component } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+
+import { RestaurantService } from 'src/app/data/service/restaurant.service';
 
 @Component({
 	selector: 'app-add-restaurant',
@@ -8,7 +11,9 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AddRestaurantComponent {
 	closeResult: string;
-	constructor(private modalService: NgbModal) {}
+	restaurant: Restaurant = {};
+
+	constructor(private modalService: NgbModal, public restaurantService: RestaurantService) {}
 
 	open(content) {
 		this.modalService.open(content).result.then(
@@ -29,5 +34,12 @@ export class AddRestaurantComponent {
 		} else {
 			return `with: ${reason}`;
 		}
+	}
+
+	addNewRestaurant(formData) {
+		this.restaurant.name = formData.value.name;
+		this.restaurantService.create(this.restaurant).subscribe((data: any) => {
+			console.log(data);
+		});
 	}
 }

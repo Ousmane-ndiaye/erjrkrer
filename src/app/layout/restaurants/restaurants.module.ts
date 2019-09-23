@@ -8,10 +8,10 @@ import { RestaurantsComponent } from './restaurants.component';
 import { AddRestaurantComponent } from './composants/add-restaurant/add-restaurant.component';
 import { TableRestaurantsComponent } from './composants/table-restaurants/table-restaurants.component';
 
-import { PageHeaderModule, StatModule } from 'src/app/shared';
+import { PageHeaderModule, StatModule, PartageModule } from 'src/app/shared';
 
 @NgModule({
 	declarations: [ RestaurantsComponent, AddRestaurantComponent, TableRestaurantsComponent ],
-	imports: [ CommonModule, RestaurantsRoutingModule, NgbModule, StatModule, PageHeaderModule ]
+	imports: [ CommonModule, RestaurantsRoutingModule, NgbModule, StatModule, PageHeaderModule, PartageModule ]
 })
 export class RestaurantsModule {}
