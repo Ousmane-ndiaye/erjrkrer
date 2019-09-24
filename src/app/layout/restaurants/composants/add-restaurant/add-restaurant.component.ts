@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { RestaurantService } from 'src/app/data/service/restaurant.service';
+import { UserService } from 'src/app/data/service/user.service';
 
 @Component({
 	selector: 'app-add-restaurant',
@@ -13,7 +14,7 @@ export class AddRestaurantComponent {
 	closeResult: string;
 	restaurant: Restaurant = {};
 
-	constructor(private modalService: NgbModal, public restaurantService: RestaurantService) {}
+	constructor(private modalService: NgbModal, public restaurantService: RestaurantService, public userService: UserService) {}
 
 	open(content) {
 		this.modalService.open(content).result.then(

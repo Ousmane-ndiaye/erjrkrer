@@ -8,8 +8,8 @@ export const environment = {
 	authConfig: {
 		instance: 'https://login.microsoftonline.com/',
 		tenant: 'nopale.onmicrosoft.com',
-		tenentId: 'nopaleapi',
-		clientId: 'e55dec96-1b7e-4fbd-bea5-593a2ca40677'
+		tenentId: 'b4845326-2128-4e0d-991b-2714d78c0ff2',
+		clientId: '3fb6e8e8-bc7f-41cc-825a-1f5b8b52aef5'
 	}
 };
 
