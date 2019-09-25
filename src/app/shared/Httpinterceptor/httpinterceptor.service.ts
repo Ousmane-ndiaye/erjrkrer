@@ -13,9 +13,11 @@ export class HttpinterceptorService implements HttpInterceptor {
 			setHeaders: {
 				'Content-Type': 'application/json-patch+json',
 				'Cache-Control': 'no-cache',
-				accept: 'text/plain',
+				'Access-Control-Allow-Origin': '*',
+				Accept: 'text/plain',
 				Authorization: `Bearer ${this.adalService.userInfo.token}`
-			}
+			},
+			setResponseType: 'text'
 		});
 		return next.handle(tokenizeReq);
 	}
