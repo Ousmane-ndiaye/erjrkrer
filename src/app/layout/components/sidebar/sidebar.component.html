@@ -1,5 +1,5 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
-    <div class="logo-site">
+    <div class="logo-site" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
         <a class="navbar-brand" routerLink="/">NOPALÉ </a>
     </div>
     <div class="list-group">
@@ -41,22 +41,17 @@
                     <ul class="submenu">
                         <li>
                             <a href="javascript:void(0)">
-                                <span><em class="fa fa-fw fa-user"></em> {{ 'Profile' | translate }}</span>
+                                <span><em class="fa fa-fw fa-user"></em> {{ 'Profil' | translate }}</span>
                             </a>
                         </li>
                         <li>
-                            <a href="javascript:void(0)">
-                                <span><em class="fa fa-fw fa-envelope"></em> {{ 'Inbox' | translate }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)">
-                                <span><em class="fa fa-fw fa-gear"></em> {{ 'Settings' | translate }}</span>
+                            <a [routerLink]="['/parametres']">
+                                <span><em class="fa fa-fw fa-gear"></em> {{ 'Paramètres' | translate }}</span>
                             </a>
                         </li>
                         <li>
                             <a [routerLink]="['/login']" (click)="onLoggedout()">
-                                <span><em class="fa fa-fw fa-power-off"></em> {{ 'Log Out' | translate }}</span>
+                                <span><em class="fa fa-fw fa-power-off"></em> {{ 'Se déconnecter' | translate }}</span>
                             </a>
                         </li>
                     </ul>

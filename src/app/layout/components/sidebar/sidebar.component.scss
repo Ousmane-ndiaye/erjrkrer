@@ -208,12 +208,6 @@ $topnav-background-color: #222;
 		text-shadow: #ededed 3px 2px 0;
 		position: relative;
 	}
-	:after {
-		content: "NOPALÉ";
-		position: absolute;
-		left: 2px;
-		top: 7px;
-	}
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-ms-transition: all 0.2s ease-in-out;
