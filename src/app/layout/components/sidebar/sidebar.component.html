@@ -1,4 +1,7 @@
 <nav class="sidebar" [ngClass]="{sidebarPushRight: isActive, collapsed: collapsed}">
+    <div class="logo-site">
+        <a class="navbar-brand" routerLink="/">NOPALÉ </a>
+    </div>
     <div class="list-group">
         <a routerLink="/dashboard" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <em class="fa fa-fw fa-dashboard"></em>&nbsp;
@@ -63,6 +66,6 @@
     </div>
     <div class="toggle-button" [ngClass]="{collapsed: collapsed}" (click)="toggleCollapsed()">
         <em class="fa fa-fw fa-angle-double-{{collapsed?'right':'left'}}"></em>&nbsp;
-        <span>{{ 'Collapse Sidebar' | translate }}</span>
+        <span>{{ 'Cacher le menu' | translate }}</span>
     </div>
 </nav>
