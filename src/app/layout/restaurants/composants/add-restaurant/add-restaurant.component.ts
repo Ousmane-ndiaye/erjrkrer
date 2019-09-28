@@ -42,15 +42,14 @@ export class AddRestaurantComponent {
 		this.restaurant.name = formData.value.name.replace(/ /gi, '_');
 		this.restaurantService.create(this.restaurant).subscribe((objectId: any) => {
 			console.log(objectId);
-			const gerant: User = {
-				firstName: formData.value.firstName,
-				lastName: formData.value.lastName,
-				username: formData.value.username,
-				password: 'DFJD@DFdjh1233'
-			};
-			this.userService.create(gerant).subscribe((data: any) => {
-				console.log(data);
-			});
+		});
+		const gerant: User = {
+			firstName: formData.value.firstName,
+			lastName: formData.value.lastName,
+			username: formData.value.username
+		};
+		this.userService.create(gerant).subscribe((data: any) => {
+			console.log(data);
 		});
 	}
 }
