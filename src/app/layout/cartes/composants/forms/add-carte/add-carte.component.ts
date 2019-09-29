@@ -35,7 +35,7 @@ export class AddCarteComponent {
 
 	linkCard(formData) {
 		console.log(formData.value);
-		this.cardService.link(formData.value).subscribe((data: any) => {
+		this.cardService.create(formData.value).subscribe((data: any) => {
 			console.log(data);
 		});
 	}

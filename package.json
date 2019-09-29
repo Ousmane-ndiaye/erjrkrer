@@ -30,6 +30,7 @@
 		"core-js": "2.5.7",
 		"font-awesome": "4.7.0",
 		"ng2-charts": "2.3.0",
+		"ngx-spinner": "^8.0.3",
 		"rxjs": "6.5.3",
 		"tslib": "^1.9.0",
 		"yarn": "1.16.0",

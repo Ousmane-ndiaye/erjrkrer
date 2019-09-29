@@ -7,6 +7,7 @@
         </button>
     </div>
     <div class="modal-body">
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
         <form role="form" id="formAddResto" method="POST" #formAddResto="ngForm" (ngSubmit)="addNewRestaurant(formAddResto)">
             <fieldset class="form-group">
                 <label>Nom du restaurant</label>
@@ -22,8 +23,13 @@
             </fieldset>
 
             <fieldset class="form-group">
-                <label>Username</label>
+                <label>E-mail</label>
                 <input type="text" class="form-control" name="username" #username="ngModel" required ngModel>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Numéro lecteur</label>
+                <input type="text" class="form-control" name="numLecteur" #numLecteur="ngModel" required ngModel>
             </fieldset>
 
             <fieldset class="form-group">
@@ -33,7 +39,12 @@
         </form>
     </div>
     <div class="modal-footer">
-        <button type="submit" form="formAddResto" [disabled]="formAddResto.invalid" class="btn btn-success" >Enregistrer </button>
+        <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p class="loading">Chargement...</p>
+        </ngx-spinner>
+        <button type="submit" [disabled]="loading" form="formAddResto" class="btn btn-success">
+            Enregistrer
+        </button>
         <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler </button>
     </div>
 </ng-template>

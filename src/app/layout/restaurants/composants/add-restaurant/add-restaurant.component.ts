@@ -5,6 +5,9 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { RestaurantService } from 'src/app/data/service/restaurant.service';
 import { UserService } from 'src/app/data/service/user.service';
+import { Router } from '@angular/router';
+
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
 	selector: 'app-add-restaurant',
@@ -14,8 +17,16 @@ import { UserService } from 'src/app/data/service/user.service';
 export class AddRestaurantComponent {
 	closeResult: string;
 	restaurant: Restaurant = {};
+	loading = false;
+	error = '';
 
-	constructor(private modalService: NgbModal, public restaurantService: RestaurantService, public userService: UserService) {}
+	constructor(
+		private modalService: NgbModal,
+		public restaurantService: RestaurantService,
+		public userService: UserService,
+		private router: Router,
+		private spinner: NgxSpinnerService
+	) {}
 
 	open(content) {
 		this.modalService.open(content).result.then(
@@ -39,17 +50,34 @@ export class AddRestaurantComponent {
 	}
 
 	addNewRestaurant(formData) {
+		this.loading = true;
+		this.spinner.show();
 		this.restaurant.name = formData.value.name.replace(/ /gi, '_');
-		this.restaurantService.create(this.restaurant).subscribe((objectId: any) => {
-			console.log(objectId);
-		});
-		const gerant: User = {
-			firstName: formData.value.firstName,
-			lastName: formData.value.lastName,
-			username: formData.value.username
-		};
-		this.userService.create(gerant).subscribe((data: any) => {
-			console.log(data);
-		});
+		this.restaurantService.create(this.restaurant).subscribe(
+			(data1: any) => {
+				console.log(data1);
+				const gerant: User = {
+					firstName: formData.value.firstName,
+					lastName: formData.value.lastName,
+					username: formData.value.username
+				};
+				this.userService.create(gerant).subscribe(
+					(data2: any) => {
+						console.log(data2);
+						this.router.navigate([ '/restaurants' ]);
+					},
+					(error) => {
+						this.error = error;
+                        this.loading = false;
+                        this.spinner.hide();
+					}
+				);
+			},
+			(error) => {
+				this.error = error;
+                this.loading = false;
+                this.spinner.hide();
+			}
+		);
 	}
 }

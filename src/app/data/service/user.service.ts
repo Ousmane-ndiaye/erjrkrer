@@ -11,6 +11,6 @@ export class UserService {
 	constructor(private http: HttpClient) {}
 
 	create(user: User) {
-		return this.http.post(`${environment.apiUrl}/user/create`, user, { observe: 'response' });
+		return this.http.post(`${environment.apiUrl}/user/create`, user);
 	}
 }
