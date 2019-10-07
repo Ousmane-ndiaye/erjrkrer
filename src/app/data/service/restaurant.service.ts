@@ -13,4 +13,8 @@ export class RestaurantService {
 	create(resto: Restaurant) {
 		return this.http.post(`${environment.apiUrl}/restaurant/create`, resto);
 	}
+
+	lists() {
+		return this.http.get(`${environment.apiUrl}/restaurant/list`);
+	}
 }

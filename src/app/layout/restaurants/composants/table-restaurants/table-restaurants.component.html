@@ -10,44 +10,29 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Saf Sap</td>
-            <td>Ousmane</td>
-            <td>ous@gmail.com</td>
-            <td>78745412</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em></button>
-                <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"
-                        aria-hidden="true"></em></button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Yande Codou</td>
-            <td>Adama</td>
-            <td>adama@gmail.com</td>
-            <td>775454512</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em></button>
-                <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"
-                        aria-hidden="true"></em></button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Kay leek</td>
-            <td>Matar</td>
-            <td>matar@gmail.com</td>
-            <td>78454512</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em></button>
-                <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"
-                        aria-hidden="true"></em></button>
-            </td>
-        </tr>
+        <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p class="loading">Chargement...</p>
+        </ngx-spinner>
+        <ng-container *ngIf="!loading">
+            <ng-container *ngIf="restaurants.length > 0">
+                <tr *ngFor="let restaurant of restaurants; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ restaurant.name }}</td>
+                    <td>Ousmane</td>
+                    <td>ous@gmail.com</td>
+                    <td>78745412</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
+                                aria-hidden="true"></em></button>
+                        <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash" aria-hidden="true"></em></button>
+                    </td>
+                </tr>
+            </ng-container>
+            <ng-container *ngIf="restaurants.length <= 0">
+                <tr>
+                    <td colspan="6">Aucun données disponibles</td>
+                </tr>
+            </ng-container>
+        </ng-container>
     </tbody>
 </table>
