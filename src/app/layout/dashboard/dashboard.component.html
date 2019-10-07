@@ -15,35 +15,35 @@
         </div>
     </div>
     <hr />
-    <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
-    <hr />
     <div class="row">
-        <div class="col-lg-8">
-            <div class="card card-default">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
+                    Bar Chart
                 </div>
-                <!-- /.card-header -->
-                <app-timeline></app-timeline>
-                <!-- /.card-body -->
+                <div class="card-body">
+                    <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                        [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                </div>
             </div>
-            <!-- /.card -->
         </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
-            <div class="card card-default mb-3">
+        <div class="col col-sm-6">
+            <div class="card mb-3">
                 <div class="card-header">
-                    <i class="fa fa-bell fa-fw"></i> Notifications card
+                    Doughnut Chart
                 </div>
-                <!-- /.card-header -->
-                <app-notification></app-notification>
-                <!-- /.card-body -->
+                <div class="card-body">
+                    <canvas baseChart height="180px" [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                        [chartType]="doughnutChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)">
+                    </canvas>
+                </div>
             </div>
-            <!-- /.card -->
-
-            <app-chat></app-chat>
-            <!-- /.card .chat-card -->
         </div>
-        <!-- /.col-lg-4 -->
     </div>
 </div>
