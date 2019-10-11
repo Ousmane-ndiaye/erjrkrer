@@ -2,7 +2,8 @@
     <div class="card-header">
         <div class="row">
             <div class="col col-xs-3">
-                <i class="fa {{icon}} fa-5x"></i>
+                <em *ngIf="icon"  class="fa {{icon}} fa-5x"></em>
+                <img *ngIf="img"  src="assets/images/icons/{{img}}" alt="" srcset="">
             </div>
             <div class="col col-xs-9 text-right">
                 <div class="d-block huge">{{count}}</div>
@@ -11,9 +12,9 @@
         </div>
     </div>
     <div class="card-footer">
-        <span class="float-left">View Details {{data}}</span>
-        <a href="javascript:void(0)" class="float-right card-inverse">
-            <span ><i class="fa fa-arrow-circle-right"></i></span>
+        <span class="float-left">Voir Détails {{data}}</span>
+        <a href="javascript:void(0)" class="float-right text-danger card-inverse">
+            <span ><em class="fa fa-arrow-circle-right"></em></span>
         </a>
     </div>
 </div>

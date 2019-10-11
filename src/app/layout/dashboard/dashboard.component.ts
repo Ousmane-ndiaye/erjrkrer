@@ -13,11 +13,11 @@ export class DashboardComponent implements OnInit {
 		scaleShowVerticalLines: false,
 		responsive: true
 	};
-	public barChartLabels: string[] = [ 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi' ];
+	public barChartLabels: string[] = [ 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi' ];
 	public barChartType: string;
 	public barChartLegend: boolean;
 
-	public barChartData: any[] = [ { data: [ 65, 59, 80, 81, 60 ], label: 'Nombre de tickets vendu par jour' } ];
+	public barChartData: any[] = [ { data: [ 70, 75, 80, 81, 70, 65 ], label: 'Nombre de tickets vendu par jour' } ];
 
 	// Doughnut
 	public doughnutChartLabels: string[] = [ 'Semaine 1', 'Semaine 2', 'Semaine 3' ];

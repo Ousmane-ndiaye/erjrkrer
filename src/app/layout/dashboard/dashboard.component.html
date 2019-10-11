@@ -1,17 +1,14 @@
 <div [@routerTransition]>
-    <h2 class="text-muted">Dashboard <small>Statistics Overview</small></h2>
+    <h2 class="text-muted">Tableau de bord <small>Aperçu des statistiques</small></h2>
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
-            <app-stat [bgClass]="'primary'" [icon]="'fa-comments'" [count]="26" [label]="'New Comments!'" ></app-stat>
+        <div class="col-xl-4 col-lg-6">
+            <app-stat [bgClass]="'warning'" [img]="'1.png'" [count]="26" [label]="'Resaurants!'" ></app-stat>
         </div>
-        <div class="col-xl-3 col-lg-6">
-            <app-stat [bgClass]="'warning'" [icon]="'fa-tasks'" [count]="12" [label]="'New task!'" ></app-stat>
+        <div class="col-xl-4 col-lg-6">
+            <app-stat [bgClass]="'primary'" [img]="'2.png'" [count]="12" [label]="'Encaissements!'" ></app-stat>
         </div>
-        <div class="col-xl-3 col-lg-6">
-            <app-stat [bgClass]="'success'" [icon]="'fa-shopping-cart'" [count]="124" [label]="'New Orders!'" ></app-stat>
-        </div>
-        <div class="col-xl-3 col-lg-6">
-            <app-stat [bgClass]="'danger'" [icon]="'fa-support'" [count]="13" [label]="'New Tickets!'"></app-stat>
+        <div class="col-xl-4 col-lg-6">
+            <app-stat [bgClass]="'success'" [img]="'3.png'" [count]="124" [label]="'Paiements!'" ></app-stat>
         </div>
     </div>
     <hr />
@@ -19,7 +16,7 @@
         <div class="col col-sm-6">
             <div class="card mb-3">
                 <div class="card-header">
-                    Bar Chart
+                    Suivi des tickets vendu par jour
                 </div>
                 <div class="card-body">
                     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
@@ -28,14 +25,14 @@
                     </canvas>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-info btn-sm" (click)="randomize()">Update</button>
+                    <button class="btn btn-info btn-sm" (click)="randomize()">Rafraichir</button>
                 </div>
             </div>
         </div>
         <div class="col col-sm-6">
             <div class="card mb-3">
                 <div class="card-header">
-                    Doughnut Chart
+                    Suivi des tickets vendu par semaine
                 </div>
                 <div class="card-body">
                     <canvas baseChart height="180px" [data]="doughnutChartData" [labels]="doughnutChartLabels"
