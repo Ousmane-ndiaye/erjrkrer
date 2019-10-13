@@ -1,4 +1,4 @@
-<button class="btn btn-primary" (click)="open(content)">Faire un rechargement</button>
+<button class="btn btn-info" (click)="open(content)">Faire un rechargement</button>
 <ng-template #content let-c="close" let-d="dismiss">
     <div class="modal-header">
         <h4 class="modal-title">Nouveau rechargement</h4>
@@ -42,7 +42,7 @@
     </div>
     <div class="modal-footer">
             <button type="button" class="btn btn-success" (click)="c('Close click')">Recharger</button>
-            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler</button>    
-            
+            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler</button>
+
     </div>
 </ng-template>
