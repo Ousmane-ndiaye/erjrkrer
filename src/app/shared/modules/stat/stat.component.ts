@@ -12,6 +12,7 @@ export class StatComponent implements OnInit {
 	@Input() label: string;
 	@Input() data: number;
 	@Input() img: string;
+	@Input() routeLink: string;
 	@Output() event: EventEmitter<any> = new EventEmitter();
 
 	constructor() {}

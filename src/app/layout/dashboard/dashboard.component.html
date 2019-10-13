@@ -2,13 +2,13 @@
     <h2 class="text-muted">Tableau de bord <small>Aperçu des statistiques</small></h2>
     <div class="row">
         <div class="col-xl-4 col-lg-6">
-            <app-stat [bgClass]="'warning'" [img]="'1.png'" [count]="26" [label]="'Resaurants!'" ></app-stat>
+            <app-stat [bgClass]="'warning'" [img]="'1.png'" [count]="countResto" [routeLink]="'/restaurants'" [label]="'Resaurants!'" ></app-stat>
         </div>
         <div class="col-xl-4 col-lg-6">
-            <app-stat [bgClass]="'primary'" [img]="'2.png'" [count]="12" [label]="'Encaissements!'" ></app-stat>
+            <app-stat [bgClass]="'primary'" [img]="'2.png'" [count]="12" [routeLink]="'/encaissements'" [label]="'Encaissements!'" ></app-stat>
         </div>
         <div class="col-xl-4 col-lg-6">
-            <app-stat [bgClass]="'success'" [img]="'3.png'" [count]="124" [label]="'Paiements!'" ></app-stat>
+            <app-stat [bgClass]="'success'" [img]="'3.png'" [count]="124" [routeLink]="'/operations'" [label]="'Paiements!'" ></app-stat>
         </div>
     </div>
     <hr />

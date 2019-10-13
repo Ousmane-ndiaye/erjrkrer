@@ -5,15 +5,12 @@
             <app-form-extract class="mb-5"></app-form-extract>
         </div>
         <div class="col col-xl-12 col-lg-12 mt-2">
-            <ngb-tabset>
-                <ngb-tab>
-                    <ng-template ngbTabTitle>Kayy lek</ng-template>
-                    <ng-template ngbTabContent>
-                        <app-table-transaction></app-table-transaction>
-                    </ng-template>
-                </ngb-tab>
-                <ngb-tab>
-                    <ng-template ngbTabTitle>Saf Sap</ng-template>
+            <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+                <p class="loading">Chargement...</p>
+            </ngx-spinner>
+            <ngb-tabset *ngIf="!loading">
+                <ngb-tab *ngFor="let restaurant of restaurants" >
+                    <ng-template ngbTabTitle>{{restaurant.name}}</ng-template>
                     <ng-template ngbTabContent>
                         <app-table-transaction></app-table-transaction>
                     </ng-template>

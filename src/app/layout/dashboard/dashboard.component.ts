@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { routerTransition } from 'src/app/router.animations';
+import { RestaurantService } from 'src/app/data/service/restaurant.service';
+import { Restaurant } from 'src/app/data/schema/restaurant';
 
 @Component({
 	selector: 'app-dashboard',
@@ -16,6 +18,7 @@ export class DashboardComponent implements OnInit {
 	public barChartLabels: string[] = [ 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi' ];
 	public barChartType: string;
 	public barChartLegend: boolean;
+	public countResto: number;
 
 	public barChartData: any[] = [ { data: [ 70, 75, 80, 81, 70, 65 ], label: 'Nombre de tickets vendu par jour' } ];
 
@@ -24,12 +27,20 @@ export class DashboardComponent implements OnInit {
 	public doughnutChartData: number[] = [ 350, 450, 100 ];
 	public doughnutChartType: string;
 
-	constructor() {}
+	constructor(public restaurantService: RestaurantService) {}
 
 	ngOnInit() {
 		this.barChartType = 'bar';
 		this.barChartLegend = true;
 		this.doughnutChartType = 'doughnut';
+		this.restaurantService.lists().subscribe(
+			(data: Restaurant[]) => {
+				this.countResto = data.length;
+			},
+			(error) => {
+				this.countResto = 0;
+			}
+		);
 	}
 
 	// events

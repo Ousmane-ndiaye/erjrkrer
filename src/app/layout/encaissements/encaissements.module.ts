@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { PageHeaderModule, StatModule } from 'src/app/shared';
+import { PageHeaderModule, StatModule, PartageModule } from 'src/app/shared';
 
 import { EncaissementsRoutingModule } from './encaissements-routing.module';
 import { EncaissementsComponent } from './encaissements.component';
@@ -12,6 +12,6 @@ import { TableTransactionComponent } from './composants/table-transaction/table-
 
 @NgModule({
 	declarations: [ EncaissementsComponent, FormExtractComponent, TableTransactionComponent ],
-	imports: [ CommonModule, EncaissementsRoutingModule, NgbModule, StatModule, PageHeaderModule ]
+	imports: [ CommonModule, EncaissementsRoutingModule, NgbModule, StatModule, PageHeaderModule, PartageModule ]
 })
 export class EncaissementsModule {}

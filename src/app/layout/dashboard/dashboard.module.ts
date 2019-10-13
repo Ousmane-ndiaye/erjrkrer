@@ -5,26 +5,11 @@ import { ChartsModule as Ng2Charts } from 'ng2-charts';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
-import {
-    TimelineComponent,
-    NotificationComponent,
-    ChatComponent
-} from './components';
-import { StatModule } from '../../shared';
+import { TimelineComponent, NotificationComponent, ChatComponent } from './components';
+import { StatModule, PartageModule } from '../../shared';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        NgbCarouselModule,
-        NgbAlertModule,
-        DashboardRoutingModule,
-        StatModule, Ng2Charts
-    ],
-    declarations: [
-        DashboardComponent,
-        TimelineComponent,
-        NotificationComponent,
-        ChatComponent
-    ]
+	imports: [ CommonModule, NgbCarouselModule, NgbAlertModule, DashboardRoutingModule, StatModule, Ng2Charts, PartageModule ],
+	declarations: [ DashboardComponent, TimelineComponent, NotificationComponent, ChatComponent ]
 })
 export class DashboardModule {}

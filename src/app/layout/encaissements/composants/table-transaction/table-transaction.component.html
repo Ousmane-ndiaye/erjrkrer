@@ -2,48 +2,35 @@
     <thead>
         <tr>
             <th>#</th>
-            <th>Bénéficière</th>
-            <th>Niveau</th>
+            <th>Montant</th>
+            <th>Client</th>
             <th>Date / Heure</th>
             <th>Options</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Papa Badara</td>
-            <td>Cadre</td>
-            <td>29 Novembre 2019 / 13:23</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em></button>
-                <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"
-                        aria-hidden="true"></em></button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Fatou Fall</td>
-            <td>Cadre</td>
-            <td>30 Juillet 2019 / 12:45</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em></button>
-                <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"
-                        aria-hidden="true"></em></button>
-            </td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Adama GUEYE</td>
-            <td>Contractuel</td>
-            <td>29 Juin 2019 / 15:20 </td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em></button>
-                <button type="button" class="btn btn-sm btn-danger"><em class="fa fa-trash"
-                        aria-hidden="true"></em></button>
-            </td>
-        </tr>
+        <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p class="loading">Chargement...</p>
+        </ngx-spinner>
+        <ng-container *ngIf="!loading">
+            <ng-container *ngIf="userPayments.length > 0">
+                <tr *ngFor="let userPayment of userPayments; let i = index">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>{{ userPayment.amount }}</td>
+                    <td>{{ userPayment.firstName }} {{ userPayment.lastName }}</td>
+                    <td>{{ userPayment.date }}</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
+                            aria-hidden="true"></em>
+                        </button>
+                    </td>
+                </tr>
+            </ng-container>
+            <ng-container *ngIf="userPayments.length <= 0">
+                <tr>
+                    <td colspan="5">Aucun données disponibles</td>
+                </tr>
+            </ng-container>
+        </ng-container>
     </tbody>
 </table>
