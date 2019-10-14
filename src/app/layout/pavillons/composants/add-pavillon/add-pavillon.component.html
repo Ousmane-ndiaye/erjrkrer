@@ -1,0 +1,51 @@
+<button class="btn btn-info" (click)="open(content)">Ajouter un pavillon</button>
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Nouveau pavillon</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        <form role="form" id="formAddPavillon" method="POST" #formAddPavillon="ngForm"
+            (ngSubmit)="addNewPavillon(formAddPavillon)">
+            <fieldset class="form-group">
+                <label>Nom du pavillon</label>
+                <input type="text" class="form-control" name="name" id="name" #name="ngModel" required ngModel>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Nombre de chambre</label>
+                <input type="number" class="form-control" name="chambres" #chambres="ngModel" required ngModel>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Gérant: </label><br />
+                <small class="text-muted">Prénom</small>
+                <input type="text" class="form-control" name="firstName" #firstName="ngModel" required ngModel>
+                <small class="text-muted">Nom</small>
+                <input type="text" class="form-control" name="lastName" #lastName="ngModel" required ngModel>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>E-mail</label>
+                <input type="text" class="form-control" name="username" #username="ngModel" required ngModel>
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label>Téléphone</label>
+                <input type="text" class="form-control" name="phone" #phone="ngModel" required ngModel>
+            </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p class="loading">Chargement...</p>
+        </ngx-spinner>
+        <button type="submit" [disabled]="loading" form="formAddPavillon" class="btn btn-success">
+            Enregistrer
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler </button>
+    </div>
+</ng-template>

@@ -17,6 +17,7 @@ const routes: Routes = [
 			{ path: 'operations', loadChildren: () => import('./operations/operations.module').then((m) => m.OperationsModule) },
 			{ path: 'cartes', loadChildren: () => import('./cartes/cartes.module').then((m) => m.CartesModule) },
 			{ path: 'restaurants', loadChildren: () => import('./restaurants/restaurants.module').then((m) => m.RestaurantsModule) },
+			{ path: 'pavillons', loadChildren: () => import('./pavillons/pavillons.module').then((m) => m.PavillonsModule) },
 			{ path: 'parametres', loadChildren: () => import('./parametres/parametres.module').then((m) => m.ParametresModule) }
 		]
 	}

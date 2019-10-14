@@ -1,0 +1,16 @@
+<div [@routerTransition]>
+    <app-page-header [heading]="'Pavillons'" [icon]="'fa-building'"></app-page-header>
+    <div class="row">
+        <div class="col col-xl-12 col-lg-12">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Liste des pavillons
+                </div>
+                <div class="card-body table-responsive">
+                    <app-add-pavillon class="pull-right mb-3"></app-add-pavillon>
+                    <app-table-pavillons></app-table-pavillons>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -27,6 +27,10 @@
             <em class="fa fa-fw fa-cutlery"></em>&nbsp;
             <span>{{ 'Restaurants' | translate }}</span>
         </a>
+        <a [routerLink]="['/pavillons']" [routerLinkActive]="['router-link-active']" class="list-group-item">
+            <em class="fa fa-fw fa-building"></em>&nbsp;
+            <span>{{ 'Pavillons' | translate }}</span>
+        </a>
         <a [routerLink]="['/parametres']" [routerLinkActive]="['router-link-active']" class="list-group-item">
             <em class="fa fa-fw fa-cogs"></em>&nbsp;
             <span>{{ 'Paramètres' | translate }}</span>
