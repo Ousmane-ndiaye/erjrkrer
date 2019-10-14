@@ -7,10 +7,161 @@
                     Liste des rechargements
                 </div>
                 <div class="card-body table-responsive">
-                    <app-add class="pull-right mb-3"></app-add>
-                    <app-table-recharges></app-table-recharges>
+                    <div class="row">
+                        <div class="col-md-6 col-xl-6 col-lg-6 mb-2">
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Total rechargement
+                                    <span class="badge badge-secondary badge-pill">1</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Montant total rechargé
+                                    <span class="badge badge-secondary badge-pill">100 000f</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xl-6 col-lg-6 text-right mb-3 pt-5">
+                            <button class="btn btn-primary mr-2"  (click)="open(content)">Rapport</button>
+                            <app-add></app-add>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-xl-12 col-lg-12">
+                            <app-table-recharges></app-table-recharges>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-header d-print-none">
+            <h4 class="modal-title">Rapport</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="clearfix">
+                                <div class="pull-left">
+                                    <h4 class="text-right"><strong>Nopalé</strong></h4>
+
+                                </div>
+                                <div class="pull-right">
+                                    <h4>Rapport # <br>
+                                        <strong>2015-04-23654789</strong>
+                                    </h4>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="pull-left m-t-30">
+                                        <address>
+                                            <strong>Twitter, Inc.</strong><br>
+                                            795 Folsom Ave, Suite 600<br>
+                                            San Francisco, CA 94107<br>
+                                            <abbr title="Phone">P:</abbr> (123) 456-7890
+                                        </address>
+                                    </div>
+                                    <div class="pull-right m-t-30">
+                                        <p><strong>Order Date: </strong> Jun 15, 2015</p>
+                                        <p class="m-t-10"><strong>Order Status: </strong> <span
+                                                class="label label-pink">Pending</span></p>
+                                        <p class="m-t-10"><strong>Order ID: </strong> #123456</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-h-50"></div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive">
+                                        <table class="table m-t-30">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Item</th>
+                                                    <th>Description</th>
+                                                    <th>Quantity</th>
+                                                    <th>Unit Cost</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>LCD</td>
+                                                    <td>Lorem ipsum dolor sit amet.</td>
+                                                    <td>1</td>
+                                                    <td>$380</td>
+                                                    <td>$380</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Mobile</td>
+                                                    <td>Lorem ipsum dolor sit amet.</td>
+                                                    <td>5</td>
+                                                    <td>$50</td>
+                                                    <td>$250</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>LED</td>
+                                                    <td>Lorem ipsum dolor sit amet.</td>
+                                                    <td>2</td>
+                                                    <td>$500</td>
+                                                    <td>$1000</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>LCD</td>
+                                                    <td>Lorem ipsum dolor sit amet.</td>
+                                                    <td>3</td>
+                                                    <td>$300</td>
+                                                    <td>$900</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>5</td>
+                                                    <td>Mobile</td>
+                                                    <td>Lorem ipsum dolor sit amet.</td>
+                                                    <td>5</td>
+                                                    <td>$80</td>
+                                                    <td>$400</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="border-radius: 0px">
+                                <div class="col-md-3 offset-md-9">
+                                    <p class="text-right"><strong>Total TTC:</strong> 2930</p>
+                                    <p class="text-right">Discout: 12.9%</p>
+                                    <p class="text-right">TVA: 12.9%</p>
+                                    <hr>
+                                    <h3 class="text-right"> 2930 FCFA</h3>
+                                </div>
+                            </div>
+                            <hr class="d-print-none">
+                            <div class="d-print-none">
+                                <div class="pull-right">
+                                    <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light mr-2"><em
+                                            class="fa fa-print"></em></a>
+                                    <button (click)="c('Close click')" class="btn btn-success waves-effect waves-light">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </ng-template>
 </div>

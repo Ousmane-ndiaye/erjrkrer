@@ -5,12 +5,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { RechargesRoutingModule } from './recharges-routing.module';
 import { RechargesComponent } from './recharges.component';
-import { PageHeaderModule, StatModule } from 'src/app/shared';
+import { PageHeaderModule, StatModule, PartageModule } from 'src/app/shared';
 import { AddComponent } from './composants/forms/add/add.component';
 import { TableRechargesComponent } from './composants/table-recharges/table-recharges.component';
 
 @NgModule({
 	declarations: [ RechargesComponent, AddComponent, TableRechargesComponent ],
-	imports: [ CommonModule, StatModule, NgbModule, RechargesRoutingModule, PageHeaderModule ]
+	imports: [ CommonModule, StatModule, NgbModule, RechargesRoutingModule, PageHeaderModule, PartageModule ]
 })
 export class RechargesModule {}

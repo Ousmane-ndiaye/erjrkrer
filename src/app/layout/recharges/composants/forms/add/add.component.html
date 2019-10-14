@@ -7,42 +7,27 @@
         </button>
     </div>
     <div class="modal-body">
-        <form role="form">
-            <div class="form-group">
-                <label>Bénéficiaire</label>
-                <select class="form-control">
-                    <option>Cadres</option>
-                    <option>Contractuel</option>
-                </select>
-            </div>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
 
-            <div class="form-group">
-                <label>Mois</label>
-                <select class="form-control">
-                    <option>Janvier</option>
-                    <option>Février</option>
-                    <option>Mars</option>
-                    <option>Avril</option>
-                    <option>Mais</option>
-                    <option>Juin</option>
-                    <option>Juillet</option>
-                    <option>Août</option>
-                    <option>Septembre</option>
-                    <option>Octobre</option>
-                    <option>Novembre</option>
-                    <option>Décembre</option>
-                </select>
-            </div>
+        <form role="form" id="formMakeRecharge" method="POST" #formMakeRecharge="ngForm" (ngSubmit)="makeRecharge(formMakeRecharge)">
+            <fieldset class="form-group">
+                <label>Numéro carte</label>
+                <input type="text" class="form-control" name="number" id="number" #number="ngModel" ngModel>
+            </fieldset>
 
             <fieldset class="form-group">
                 <label>Montant</label>
-                <input class="form-control" placeholder="Ex: 100000">
+                <input type="text" class="form-control" name="amount" id="amount" #amount="ngModel" ngModel>
             </fieldset>
         </form>
     </div>
     <div class="modal-footer">
-            <button type="button" class="btn btn-success" (click)="c('Close click')">Recharger</button>
-            <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler</button>
-
+        <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+            <p class="loading">Chargement...</p>
+        </ngx-spinner>
+        <button type="submit" [disabled]="loading" form="formMakeRecharge" class="btn btn-success">
+            Recharger
+        </button>
+        <button type="button" class="btn btn-secondary" (click)="c('Close click')">Annuler </button>
     </div>
 </ng-template>

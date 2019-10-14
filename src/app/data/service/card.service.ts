@@ -15,4 +15,8 @@ export class CardService {
 	link(data) {
 		return this.http.post(`${environment.apiUrl}/card/link`, data);
 	}
+
+	recharge(data) {
+		return this.http.post(`${environment.apiUrl}/card/recharge`, data);
+	}
 }
