@@ -1,4 +1,4 @@
-import { Housing } from './../../../../../../.history/src/app/data/schema/housing_20191021183801';
+import { Housing } from 'src/app/data/schema/housing';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
