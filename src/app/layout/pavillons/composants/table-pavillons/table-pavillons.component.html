@@ -1,24 +1,118 @@
-<table class="table table-striped">
+<table class="table table-striped" aria-describedby="List of house">
     <thead>
         <tr>
             <th>#</th>
             <th>Nom du pavillon</th>
+            <th>Nombre d'étage</th>
             <th>Nombre de chambre</th>
             <th>Gérant</th>
-            <th>Options</th>
+            <th class="text-center">Options</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <th scope="row">1</th>
             <td>Pavillon A</td>
+            <td>12</td>
             <td>32</td>
             <td>Alioune Ndiaye</td>
-            <td>
-                <button type="button" class="btn btn-sm btn-info mr-2"><em class="fa fa-info-circle"
-                        aria-hidden="true"></em>
+            <td class="text-center">
+                <button type="button" class="btn btn-sm btn-info mr-2" (click)="open(content, 5)"><em class="fa fa-info-circle"
+                    aria-hidden="true"></em>
                 </button>
             </td>
         </tr>
     </tbody>
 </table>
+
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title">Liste de chambres</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12 mb-4">
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                <form role="form" id="formAddRoom" method="POST" #formAddRoom="ngForm"
+                    (ngSubmit)="addNewRoom(formAddRoom)">
+                    <input type="hidden" class="form-control" name="housingId" id="housingId" #housingId="ngModel" required ngModel>
+                    <h4>Nouveau chambre</h4>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <fieldset class="form-group">
+                                <legend class="label-legend">Etage</legend>
+                                <input type="number" class="form-control" name="floorCount" #floorCount="ngModel" required ngModel>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset class="form-group">
+                                <legend class="label-legend">Numéro chambre</legend>
+                                <input type="number" class="form-control" name="roomCount" #roomCount="ngModel" required ngModel>
+                            </fieldset>
+                        </div>
+
+                        <div class="col-md-4">
+                            <fieldset class="form-group mb-0">
+                                <div class="form-group">
+                                    <legend class="label-legend">Résponsable chambre</legend>
+                                    <input type="number" class="form-control" name="responsable" #responsable="ngModel" required ngModel>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="offset-md-8 col-md-4 text-right">
+                            <ngx-spinner *ngIf="loading" [fullScreen]="false" type="ball-clip-rotate-multiple" size="medium">
+                            <p class="loading">Chargement...</p>
+                            </ngx-spinner>
+                            <button type="submit" [disabled]="loading" form="formAddPavillon" class="btn btn-success">
+                                Enregistrer
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-12">
+                <table class="table table-striped" aria-describedby="liste of room">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Noméro chambre</th>
+                            <th>Etage</th>
+                            <th>Résponsable de chambre</th>
+                            <th class="text-center">Options</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>Ousseynou Diouf</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm btn-danger mr-2" (click)="open(content, 5)"><em class="fa fa-trash"
+                                    aria-hidden="true"></em>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>12</td>
+                            <td>3</td>
+                            <td>Malick Fall</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-sm btn-danger mr-2" (click)="open(content, 5)"><em class="fa fa-trash"
+                                    aria-hidden="true"></em>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</ng-template>

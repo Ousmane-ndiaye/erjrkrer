@@ -11,32 +11,30 @@
         <form role="form" id="formAddPavillon" method="POST" #formAddPavillon="ngForm"
             (ngSubmit)="addNewPavillon(formAddPavillon)">
             <fieldset class="form-group">
-                <label>Nom du pavillon</label>
+                <legend class="label-legend">Nom du pavillon</legend>
                 <input type="text" class="form-control" name="name" id="name" #name="ngModel" required ngModel>
             </fieldset>
 
             <fieldset class="form-group">
-                <label>Nombre de chambre</label>
-                <input type="number" class="form-control" name="chambres" #chambres="ngModel" required ngModel>
+                <legend class="label-legend">Nombre d'étage</legend>
+                <input type="number" class="form-control" name="floorCount" #floorCount="ngModel" required ngModel>
             </fieldset>
 
             <fieldset class="form-group">
-                <label>Gérant: </label><br />
-                <small class="text-muted">Prénom</small>
-                <input type="text" class="form-control" name="firstName" #firstName="ngModel" required ngModel>
-                <small class="text-muted">Nom</small>
-                <input type="text" class="form-control" name="lastName" #lastName="ngModel" required ngModel>
+                <legend class="label-legend">Nombre de chambre</legend>
+                <input type="number" class="form-control" name="roomCount" #roomCount="ngModel" required ngModel>
             </fieldset>
 
             <fieldset class="form-group">
-                <label>E-mail</label>
-                <input type="text" class="form-control" name="username" #username="ngModel" required ngModel>
+                <div class="form-group">
+                    <legend class="label-legend">Gérant</legend>
+                    <select class="form-control" name="managerId" #managerId="ngModel" required ngModel>
+                        <option value="">Gérant du pavillon</option>
+                        <option value="42VgYGiI8RWqfBLMt7UqkHP/L8s9L/QubSvwq8vzn7Ska8vE75wA">Ousmane Ndiaye</option>
+                    </select>
+                </div>
             </fieldset>
 
-            <fieldset class="form-group">
-                <label>Téléphone</label>
-                <input type="text" class="form-control" name="phone" #phone="ngModel" required ngModel>
-            </fieldset>
         </form>
     </div>
     <div class="modal-footer">

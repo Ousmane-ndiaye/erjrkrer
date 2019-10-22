@@ -1,6 +1,9 @@
+import { Housing } from './../../../../../../.history/src/app/data/schema/housing_20191021183801';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { HousingService } from 'src/app/data/service/housing.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-add-pavillon',
@@ -10,8 +13,14 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class AddPavillonComponent implements OnInit {
 	closeResult: string;
 	loading = false;
+	house: Housing;
 	error = '';
-	constructor(private modalService: NgbModal, private spinner: NgxSpinnerService) {}
+	constructor(
+		private modalService: NgbModal,
+		public housingService: HousingService,
+		private router: Router,
+		private spinner: NgxSpinnerService
+	) {}
 
 	ngOnInit() {}
 
@@ -36,5 +45,23 @@ export class AddPavillonComponent implements OnInit {
 		}
 	}
 
-	addNewPavillon(formData) {}
+	addNewPavillon(formData) {
+		this.loading = true;
+		this.spinner.show();
+		this.house = {
+			number: formData.value.number,
+			amount: formData.value.amount
+		};
+		this.housingService.create(this.house).subscribe(
+			(data: any) => {
+				console.log(data);
+				this.router.navigate([ '/pavillons' ]);
+			},
+			(error) => {
+				this.error = error;
+				this.loading = false;
+				this.spinner.hide();
+			}
+		);
+	}
 }

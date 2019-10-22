@@ -22,7 +22,6 @@ export class HeaderComponent implements OnInit {
 
 	ngOnInit() {
 		this.pushRightClass = 'push-right';
-		console.log(this.adalService.userInfo);
 		this.name = this.adalService.userInfo.profile.name;
 	}
 
