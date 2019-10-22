@@ -22,7 +22,9 @@ export class AddPavillonComponent implements OnInit {
 		private spinner: NgxSpinnerService
 	) {}
 
-	ngOnInit() {}
+	ngOnInit() {
+		this.house = {};
+	}
 
 	open(content) {
 		this.modalService.open(content).result.then(
@@ -48,10 +50,6 @@ export class AddPavillonComponent implements OnInit {
 	addNewPavillon(formData) {
 		this.loading = true;
 		this.spinner.show();
-		this.house = {
-			number: formData.value.number,
-			amount: formData.value.amount
-		};
 		this.housingService.create(this.house).subscribe(
 			(data: any) => {
 				console.log(data);
